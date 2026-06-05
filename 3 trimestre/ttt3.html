@@ -2,36 +2,73 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<title>3º Trimestre – T3</title>
+<title>3º Trimestre – T3 · Resultados</title>
 <link rel="stylesheet" href="../estilo.css">
 </head>
 <body>
 
 <header class="top-menu">
-    <a href="#">Portfólio</a>
-    <a href="#">Contactos</a>
-    <a href="#">Espaço 2</a>
+  <a href="#">Portfólio</a>
+  <a href="#">Contactos</a>
+  <a href="#">Espaço 2</a>
 </header>
 
 <div class="layout">
-
 <aside class="side-menu">
-    <a href="../1 trimestre/t1.html">1º Trimestre</a>
-    <a href="../2 trimestre/tt1.html">2º Trimestre</a>
-    <a href="ttt1.html">3º Trimestre</a>
+  <a href="../1 trimestre/t1.html">1º Trimestre</a>
+  <a href="../2 trimestre/tt1.html">2º Trimestre</a>
+  <a href="ttt1.html">3º Trimestre</a>
 </aside>
 
 <main>
-
 <div class="submenu">
-    <a href="ttt1.html">T1</a>
-    <a href="ttt2.html">T2</a>
-    <a href="ttt3.html">T3</a>
+  <a href="ttt1.html">T1</a>
+  <a href="ttt2.html">T2</a>
+  <a href="ttt3.html" class="ativo">T3</a>
 </div>
 
+<div class="page-header">
+  <div class="icon-circle">🏆</div>
+  <h1>
+    <span>3º Trimestre · T3</span>
+    Resultados dos Alunos
+  </h1>
+</div>
 
+<!-- CONTADORES -->
+<div class="contadores">
+  <div class="contador aprovado">
+    <div class="icone">✅</div>
+    <div class="numero" id="total-aprovados">0</div>
+    <div class="rotulo">Aprovados</div>
+  </div>
+  <div class="contador recurso">
+    <div class="icone">⚡</div>
+    <div class="numero" id="total-recurso">0</div>
+    <div class="rotulo">Recurso</div>
+  </div>
+  <div class="contador reprovado">
+    <div class="icone">❌</div>
+    <div class="numero" id="total-reprovados">0</div>
+    <div class="rotulo">Reprovados</div>
+  </div>
+</div>
+
+<!-- CARDS -->
+<div class="secao-titulo">
+  <h2>Detalhe por Aluno</h2>
+  <div class="linha"></div>
+</div>
+
+<div class="cards-grid" id="cards-resultados"></div>
+
+<div class="sem-alunos" id="sem-alunos" style="display:none;">
+  <div class="icone">📭</div>
+  <p>Nenhum aluno registado ainda.<br>Use o <a href="ttt1.html">T1 – Formulário</a> para adicionar.</p>
+</div>
 
 </main>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

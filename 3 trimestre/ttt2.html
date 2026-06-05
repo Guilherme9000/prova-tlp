@@ -2,34 +2,103 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<title>3º Trimestre – T2</title>
+<title>3º Trimestre – T2 · Tabela</title>
 <link rel="stylesheet" href="../estilo.css">
+
 </head>
 <body>
 
 <header class="top-menu">
-    <a href="#">Portfólio</a>
-    <a href="#">Contactos</a>
-    <a href="#">Espaço 2</a>
+  <a href="#">Portfólio</a>
+  <a href="#">Contactos</a>
+  <a href="#">Espaço 2</a>
 </header>
 
 <div class="layout">
-
 <aside class="side-menu">
-    <a href="../1 trimestre/t1.html">1º Trimestre</a>
-    <a href="../2 trimestre/tt1.html">2º Trimestre</a>
-    <a href="ttt1.html">3º Trimestre</a>
+  <a href="../1 trimestre/t1.html">1º Trimestre</a>
+  <a href="../2 trimestre/tt1.html">2º Trimestre</a>
+  <a href="ttt1.html">3º Trimestre</a>
 </aside>
 
 <main>
-
 <div class="submenu">
-    <a href="ttt1.html">T1</a>
-    <a href="ttt2.html">T2</a>
-    <a href="ttt3.html">T3</a>
+  <a href="ttt1.html">T1</a>
+  <a href="ttt2.html" class="ativo">T2</a>
+  <a href="ttt3.html">T3</a>
+</div>
+
+<div class="page-header">
+  <div class="icon-circle">📊</div>
+  <h1>
+    <span>3º Trimestre · T2</span>
+    Tabela de Alunos
+  </h1>
+</div>
+
+<div class="tabela-card">
+  <div class="tabela-card-header">
+    <div>
+      <div class="titulo">Registo de Alunos</div>
+      <div class="sub">Todos os alunos adicionados no formulário T1</div>
+    </div>
+    <div class="total-badge" id="total-label">0 alunos</div>
+  </div>
+
+  <div class="tabela-wrap">
+    <table id="tabelaAlunos">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Apelido</th>
+          <th>Nº Aluno</th>
+          <th>Turma</th>
+          <th>N1</th><th>N2</th><th>N3</th><th>N4</th>
+          <th>Média</th>
+          <th>Situação</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-alunos"></tbody>
+    </table>
+
+    <div class="tabela-vazia" id="tabela-vazia" style="display:none;">
+      <div class="icone">📭</div>
+      <p>Nenhum aluno registado.<br>Use o <a href="ttt1.html">T1 – Formulário</a> para adicionar.</p>
+    </div>
+  </div>
 </div>
 
 </main>
 </div>
+<script src="script.js"></script>
+<script>
+  // Actualiza o badge de total
+  (function() {
+    var orig = window.renderizarTabela;
+    // Aguarda script.js carregar e sobrepõe para actualizar o badge
+    document.addEventListener('DOMContentLoaded', function() {
+      var lista = carregarAlunos ? carregarAlunos() : [];
+      var badge = document.getElementById('total-label');
+      if(badge) badge.textContent = lista.length + (lista.length === 1 ? ' aluno' : ' alunos');
+    });
+  })();
+
+  // Sobrepõe remover para actualizar badge
+  var _origBtn = document.addEventListener;
+  document.addEventListener('DOMContentLoaded', function(){
+    // badge update após cada remoção
+    document.addEventListener('click', function(e){
+      if(e.target && e.target.classList.contains('btn-remover')){
+        setTimeout(function(){
+          var lista = carregarAlunos ? carregarAlunos() : [];
+          var badge = document.getElementById('total-label');
+          if(badge) badge.textContent = lista.length + (lista.length === 1 ? ' aluno' : ' alunos');
+        }, 50);
+      }
+    });
+  });
+</script>
 </body>
 </html>

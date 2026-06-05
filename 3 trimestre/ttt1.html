@@ -2,35 +2,124 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
-<title>3º Trimestre – T1</title>
+<title>3º Trimestre – T1 · Formulário</title>
 <link rel="stylesheet" href="../estilo.css">
+
 </head>
 <body>
 
 <header class="top-menu">
-    <a href="#">Portfólio</a>
-    <a href="#">Contactos</a>
-    <a href="#">Espaço 2</a>
+  <a href="#">Portfólio</a>
+  <a href="#">Contactos</a>
+  <a href="#">Espaço 2</a>
 </header>
 
 <div class="layout">
-
 <aside class="side-menu">
-    <a href="../1 trimestre/t1.html">1º Trimestre</a>
-    <a href="../2 trimestre/tt1.html">2º Trimestre</a>
-    <a href="ttt1.html">3º Trimestre</a>
+  <a href="../1 trimestre/t1.html">1º Trimestre</a>
+  <a href="../2 trimestre/tt1.html">2º Trimestre</a>
+  <a href="ttt1.html">3º Trimestre</a>
 </aside>
 
 <main>
-
 <div class="submenu">
-    <a href="ttt1.html">T1</a>
-    <a href="ttt2.html">T2</a>
-    <a href="ttt3.html">T3</a>
+  <a href="ttt1.html" class="ativo">T1</a>
+  <a href="ttt2.html">T2</a>
+  <a href="ttt3.html">T3</a>
 </div>
 
+<div class="page-header">
+  <div class="icon-circle">📋</div>
+  <h1>
+    <span>3º Trimestre · T1</span>
+    Formulário do Aluno
+  </h1>
+</div>
+
+<div class="form-card">
+  <div class="form-card-header">
+    <div>
+      <div class="legenda">Dados &amp; Notas do Aluno</div>
+      <div class="sub">Preencha todos os campos corretamente antes de submeter</div>
+    </div>
+  </div>
+
+  <div class="form-card-body">
+    <form id="formAluno" novalidate>
+      <div class="form-grid">
+
+        <div class="secao-titulo full">
+          <span>Identificação</span>
+        </div>
+
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Ex: Maria" autocomplete="off">
+          <span class="msg-erro" id="err-nome"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="apelido">Apelido</label>
+          <input type="text" id="apelido" placeholder="Ex: Fernanda Silva" autocomplete="off">
+          <span class="msg-erro" id="err-apelido"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="numero">Número do Aluno</label>
+          <input type="text" id="numero" placeholder="Ex: 20240012" autocomplete="off">
+          <span class="msg-erro" id="err-numero"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="turma">Turma</label>
+          <select id="turma">
+            <option value="">Seleccione…</option>
+            <option>10.ª A</option><option>10.ª B</option><option>10.ª C</option>
+            <option>11.ª A</option><option>11.ª B</option><option>11.ª C</option>
+            <option>12.ª A</option><option>12.ª B</option><option>12.ª C</option>
+          </select>
+          <span class="msg-erro" id="err-turma"></span>
+        </div>
+
+        <div class="secao-titulo full">
+          <span>Notas (0 – 20)</span>
+        </div>
+
+        <div class="notas-wrap full">
+          <div class="nota-card" data-num="1">
+            <label for="n1">Nota 1</label>
+            <input type="text" id="n1" placeholder="0–20" autocomplete="off">
+            <span class="msg-erro" id="err-n1"></span>
+          </div>
+          <div class="nota-card" data-num="2">
+            <label for="n2">Nota 2</label>
+            <input type="text" id="n2" placeholder="0–20" autocomplete="off">
+            <span class="msg-erro" id="err-n2"></span>
+          </div>
+          <div class="nota-card" data-num="3">
+            <label for="n3">Nota 3</label>
+            <input type="text" id="n3" placeholder="0–20" autocomplete="off">
+            <span class="msg-erro" id="err-n3"></span>
+          </div>
+        </div>
+
+      </div><!-- /form-grid -->
+
+      <div class="btn-row">
+        <button type="button" class="btn-adicionar" id="btn-adicionar">
+          <span>＋ Adicionar Aluno</span>
+        </button>
+      </div>
+
+      <div class="aviso-sucesso" id="aviso-sucesso">
+        ✓ Aluno adicionado com sucesso! Veja a <a href="ttt2.html">T2 – Tabela</a>.
+      </div>
+    </form>
+  </div>
+</div>
 
 </main>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
